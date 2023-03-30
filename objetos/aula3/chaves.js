@@ -1,0 +1,24 @@
+const cliente = {
+    nome: "Joao",
+    idade: 24,
+    email: "joao@firma.com",
+    telefone: ["11987654321", "11123456789"],
+};
+
+// Comentar para forçar o erro
+cliente.enderecos = [
+    {
+        rua: "R. Koseph Climber",
+        numero: 1337,
+        apartamento: true,
+        complemento: "ap 934",
+    }
+];
+
+const chavesDoObjeto = Object.keys(cliente);
+
+console.log(chavesDoObjeto);
+
+if (!chavesDoObjeto.includes("enderecos")) {
+    console.error("Erro. É necessário ter um endereço cadastrado.");
+}
