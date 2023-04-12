@@ -33,8 +33,30 @@ export default class User {
         return this.#ativo;
     }
 
+    set nome(novoNome) {
+        if (novoNome === "") {
+            throw new Error("Formato inválido!")
+        }
+        this.#nome = novoNome;
+    }
+    
+    set email(novoEmail) {
+        this.#email = novoEmail;
+    }
+
+    set nascimento(novoNascimento) {
+        this.#nascimento = novoNascimento;
+    }
+
+    set role(novoRole) {
+        this.#role = novoRole;
+    }
+
+    set ativo(novoAtivo) {
+        this.#ativo = novoAtivo;
+    }
+
     exibirInfos() {
-        const objUser = this.#montaObjUSer();
-        return `${objUser.nome}, ${objUser.email}, ${objUser.nascimento}, ${objUser.role}, ${objUser.ativo}`
+        return `${this.nome}, ${this.email}, ${this.nascimento}, ${this.role}, ${this.ativo}`
     }
 }
