@@ -13,7 +13,18 @@ export default class User {
         this.#ativo = ativo;
     }
 
+    #montaObjUSer() {
+        return ({
+            nome: this.#nome,
+            email: this.#email,
+            nascimento: this.#nascimento,
+            role: this.#role,
+            ativo: this.#ativo
+        })
+    }
+
     exibirInfos() {
-        return `${this.#nome}, ${this.#email}, ${this.#nascimento}, ${this.#role}, ${this.#ativo}`
+        const objUser = this.#montaObjUSer();
+        return `${objUser.nome}, ${objUser.email}, ${objUser.nascimento}, ${objUser.role}, ${objUser.ativo}`
     }
 }
